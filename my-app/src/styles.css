@@ -1,0 +1,466 @@
+/* Existing styles for the app-container */
+.app-container {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #222;
+    color: #0BEFEF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    overflow-x: hidden; /* Prevent unwanted horizontal overflow */
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 290px;
+    flex-grow: 1;
+    padding: 30px;
+    padding-left: 30px;
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #282828;
+}
+
+body {
+    background-color: #282828;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0BEFEF;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Button styles */
+.btn {
+    width: calc(100% - 40px);
+    padding: 15px;
+    font-size: large;
+    background-color: #333;
+    color: #0BEFEF;
+    border-radius: 5px;
+    border: 2px solid #0BEFEF;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #444;
+}
+
+.btn.update {
+    background-color: #0c942c;
+    color: #000000;
+    border: none;
+}
+
+.btn.update:hover {
+    background-color: #075c1b;
+}
+
+.btn.delete {
+    background-color: #CC0E00;
+    color: #000000;
+    border: none;
+}
+
+.btn.delete:hover {
+    background-color: #9B0A00;
+}
+
+.btn.download {
+    background-color: #076961;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-top: 5px;
+    font-size: 10px;
+}
+
+.btn.download:hover {
+    background-color: #05524b;
+}
+
+/* Search bar styles */
+.search-bar,
+.search-bar-hours {
+    width: 80%;
+    padding: 10px;
+    background-color: #333;
+    color: #0BEFEF;
+    border: 2px solid #0BEFEF;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-bar::placeholder,
+.search-bar-hours::placeholder {
+    color: #0BEFEF;
+    opacity: 0.7;
+}
+
+/* Filter styles */
+.filters {
+    background-color: #222;
+    padding: 15px;
+    border: 2px solid #0BEFEF;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-group {
+    margin-bottom: -5px;
+}
+
+.filter-group label {
+    color: #0BEFEF;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.filter-group input[type="range"] {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+/* Controls styles */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    bottom: 50px;
+    gap: 10px;
+    z-index: 50;
+}
+
+.controls .btn {
+    width: calc(100%);
+    margin-bottom: 10px;
+}
+
+/* Gym list styles */
+.gym-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding-right: 30px;
+    margin-bottom: 40px;
+}
+
+/* Gym card styles */
+.gym-card {
+    width: 250px;
+    height: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease-in-out;
+    position: relative;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.gym-card:hover {
+    transform: scale(1.05);
+}
+
+.gym-card.selected {
+    border: 3px solid #0BEFEF;
+}
+
+.card-header {
+    background-color: #079393;
+    color: black;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-header.cheapest {
+    background-color: #36D200;
+    color: black;
+}
+
+.card-header.most-expensive {
+    background-color: #CC0E00;
+    color: black;
+}
+
+.card-header.closest-to-average {
+    background-color: #D9D200;
+    color: black;
+}
+
+.card-info {
+    background-color: #079393;
+    color: black;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    font-size: 14px;
+    flex: 0 0 auto;
+}
+
+.card-file-display {
+    flex: 0 0 50%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-file-display img,
+.card-file-display video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 14px;
+    flex: 0.2;
+}
+
+.card-details p {
+    margin: 3px 0;
+    text-align: center;
+}
+
+.gym-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Trainer list styles */
+.trainer-list {
+    margin-top: 30px;
+}
+
+.trainer-list h2 {
+    color: #0BEFEF;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.trainer-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.trainer-card:hover {
+    transform: scale(1.02);
+}
+
+.trainer-card.selected {
+    border: 2px solid #0BEFEF;
+}
+
+.trainer-card h3 {
+    margin: 0 0 10px 0;
+    color: #0BEFEF;
+}
+
+.trainer-card p {
+    margin: 5px 0;
+    color: white;
+}
+
+/* Custom form overlay */
+.custom-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Custom form styles */
+.custom-form {
+    background-color: #222;
+    color: #0BEFEF;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.custom-form h2 {
+    margin: 0 0 15px 0;
+    font-size: 24px;
+    color: #0BEFEF;
+    text-align: center;
+}
+
+.custom-form input,
+.custom-form select {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #0BEFEF;
+    border: 2px solid #0BEFEF;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.custom-form input::placeholder {
+    color: #0BEFEF;
+    opacity: 0.7;
+}
+
+.custom-form input[type="file"] {
+    padding: 5px;
+    border: none;
+    text-align: left;
+}
+
+.custom-form .btn {
+    width: 120px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.custom-form .btn.save,
+.custom-form .btn.confirm {
+    background-color: #0c942c;
+    color: #000000;
+    border: none;
+}
+
+.custom-form .btn.save:hover,
+.custom-form .btn.confirm:hover {
+    background-color: #075c1b;
+}
+
+.custom-form .btn.cancel {
+    background-color: #CC0E00;
+    color: #000000;
+    border: none;
+}
+
+.custom-form .btn.cancel:hover {
+    background-color: #9B0A00;
+}
+
+.custom-form .btn-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Modal styles */
+.modal {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+}
+
+.modal-header {
+    background-color: cyan;
+    padding: 10px;
+    text-align: center;
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-title {
+    margin: 0;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.modal-content {
+    color: #0BEFEF;
+    align-items: center;
+}
+
+.modal-actions {
+    margin-top: 20px;
+    display: flex;
+}
+
+.modal-actions .btn {
+    margin-right: 10px;
+}
+
+.modal-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+/* Charts container */
+.charts-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: auto;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+.chart {
+    width: 30%;
+    color: white;
+}
