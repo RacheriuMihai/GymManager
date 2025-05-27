@@ -1,10 +1,8 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8080';
-
 export const fetchGyms = (sortBy = null, sortDir = 'asc') => {
     const params = sortBy ? { sortBy, sortDir } : {};
-    return fetch(`${API_URL}/gyms?` + new URLSearchParams(params), {
+    return fetch(`${process.env.REACT_APP_API_URL}/gyms?` + new URLSearchParams(params), {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
@@ -19,7 +17,7 @@ export const addGym = (gym, file) => {
     formData.append("gym", new Blob([JSON.stringify(gym)], { type: "application/json" }));
     if (file) formData.append("file", file);
 
-    return fetch(`${API_URL}/gyms`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/gyms`, {
         method: "POST",
         body: formData,
     })
@@ -34,7 +32,7 @@ export const updateGym = (gym, id, file) => {
     formData.append("gym", new Blob([JSON.stringify(gym)], { type: "application/json" }));
     if (file) formData.append("file", file);
 
-    return fetch(`${API_URL}/gyms/${id}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/gyms/${id}`, {
         method: "PUT",
         body: formData,
     })
@@ -45,7 +43,7 @@ export const updateGym = (gym, id, file) => {
 };
 
 export const deleteGym = (id) => {
-    return fetch(`${API_URL}/gyms/${id}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/gyms/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
     })
@@ -56,7 +54,7 @@ export const deleteGym = (id) => {
 };
 
 export const fetchTrainers = () => {
-    return fetch(`${API_URL}/trainers`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
@@ -67,7 +65,7 @@ export const fetchTrainers = () => {
 };
 
 export const addTrainer = (trainer) => {
-    return fetch(`${API_URL}/trainers`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(trainer),
@@ -79,7 +77,7 @@ export const addTrainer = (trainer) => {
 };
 
 export const updateTrainer = (trainer, id) => {
-    return fetch(`${API_URL}/trainers/${id}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(trainer),
@@ -91,7 +89,7 @@ export const updateTrainer = (trainer, id) => {
 };
 
 export const deleteTrainer = (id) => {
-    return fetch(`${API_URL}/trainers/${id}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
     })
@@ -102,7 +100,7 @@ export const deleteTrainer = (id) => {
 };
 
 export const assignTrainerToGym = (trainerId, gymId) => {
-    return fetch(`${API_URL}/trainers/${trainerId}/gyms/${gymId}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers/${trainerId}/gyms/${gymId}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
     })
@@ -113,7 +111,7 @@ export const assignTrainerToGym = (trainerId, gymId) => {
 };
 
 export const removeTrainerFromGym = (trainerId, gymId) => {
-    return fetch(`${API_URL}/trainers/${trainerId}/gyms/${gymId}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers/${trainerId}/gyms/${gymId}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
     })
@@ -125,7 +123,7 @@ export const removeTrainerFromGym = (trainerId, gymId) => {
 
 export const fetchGymsByTrainer = (trainerId, sortBy = null, sortDir = 'asc') => {
     const params = sortBy ? { trainerId, sortBy, sortDir } : { trainerId };
-    return fetch(`${API_URL}/gyms/trainer?` + new URLSearchParams(params), {
+    return fetch(`${process.env.REACT_APP_API_URL}/gyms/trainer?` + new URLSearchParams(params), {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
@@ -136,7 +134,7 @@ export const fetchGymsByTrainer = (trainerId, sortBy = null, sortDir = 'asc') =>
 };
 
 export const fetchTrainersBySpecialty = (specialty) => {
-    return fetch(`${API_URL}/trainers/specialty?specialty=${specialty}`, {
+    return fetch(`${process.env.REACT_APP_API_URL}/trainers/specialty?specialty=${specialty}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
     })
