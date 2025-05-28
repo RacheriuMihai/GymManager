@@ -357,7 +357,7 @@ const App = () => {
                     <button className="btn update" onClick={() => openForm("updateGym")} disabled={!selectedGym}>Update Gym</button>
                     <button className="btn delete" onClick={() => openForm("deleteGym")} disabled={!selectedGym}>Delete Gym</button>
                     <button className="btn" onClick={() => openForm("addTrainer")}>Add Trainer</button>
-                    <button className="btn update" onClick={() => openForm("updateTrainer")} disabled={!selectedTrainer}>Update Trainer</button>
+                    <button className="btn update" onClick={() => openForm("updateTrainer")} disabled={!selectedTrainer}>Updates Trainer</button>
                     <button className="btn delete" onClick={() => openForm("deleteTrainer")} disabled={!selectedTrainer}>Delete Trainer</button>
                     <button className="btn" onClick={() => openForm("assignTrainer")}>Assign Trainer</button>
                     <button className="btn" onClick={() => openForm("removeTrainer")}>Remove Trainer</button>
